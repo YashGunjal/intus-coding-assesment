@@ -7,7 +7,7 @@
  * @param handler
  */
 export function generateRoute (server, url, method, handler) {
-  server.use(url, (req, res) => {
+  server[method.toLowerCase()](url, (req, res) => {
     console.log(`API REQUEST: ${url}`);
 
     res.json(
